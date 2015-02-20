@@ -1,0 +1,12 @@
+#wrapper {
+	width: 80%;
+	height: 80%;
+	background: #3498db;
+	margin: auto auto;
+}
+
+.tool-tip {
+	background: #95a5a6;
+	display: none;
+	position: absolute;
+}

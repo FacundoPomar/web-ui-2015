@@ -1,0 +1,8 @@
+#wrapper {
+	width: 90%;
+	height: 100%;
+	background: #3498db;
+	margin: auto auto;
+	position: relative;
+	overflow: auto;
+}

@@ -1,0 +1,39 @@
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+#flag-table {
+	width: 70%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 1px solid green;
+}
+#flag-table th {
+	background-image: url("assets/tbg.png");
+	color: white;
+}
+#flag-table td, th {
+	border: 1px solid green;
+}
+#flag-table td {
+	padding: 7px;
+}
+#flag-table tbody {
+	color: #703446;
+}
+#flag-table img {
+	width: 14%;
+	height: 41%;
+}
+.light-row {
+	background-color: #fff;
+}
+.beige-row {
+	background-color: #ECECD8;
+}
+.country-flag {
+	float: left;
+}
+.country-name {
+	margin-left: 19%;
+}

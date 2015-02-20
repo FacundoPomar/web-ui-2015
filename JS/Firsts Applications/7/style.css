@@ -1,0 +1,33 @@
+#wrapper {
+	width: 80%;
+	height: 80%;
+	background: #1F518B;
+	margin: auto auto;
+}
+
+#header {
+	width: 100%;
+	background: #E2413E;
+}
+#header ul {
+	padding: 0 0 0 10px;
+	margin: 0;
+}
+#header li {
+	display: inline-block;
+	list-style: none;
+	vertical-align: middle;
+	min-height: 5px;
+	margin: 3px;
+	padding: 6px;
+}
+#header li:hover {
+	background: #1488C8;
+}
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	width: 76px;
+	background: #F7E041;
+	top: 45px;
+}

@@ -1,0 +1,56 @@
+.wrapper {
+	width: 80%; /* 900 */
+	margin: 0 auto;
+}
+.musicbox {
+	width: 37.33333333333333%; /* 336 / 990 */
+	background: #eee;
+	display: inline-block;
+}
+.title-box {
+	margin: 13px 0px 18px 11px;
+	font-size: 0.8em;
+}
+.section {
+	width: 95.53571428571429%; /* 321 / 336 */
+	border: 1px solid grey;
+	margin: 15px auto 15px;
+	display: table;
+	background: #fff;
+}
+.music-box-image {
+	width: 41.74454828660436%; /*134 / 321 */
+	float: left;
+	height: 100%;
+}
+.music-box-image img {
+	width: 82.83582089552239%; /* 111 / 134 */
+	margin: 15px auto 15px;
+	display: block;
+	border: 1px solid grey;
+}
+.info {
+	width: 53.58255451713396%; /* 172 / 321 */
+	float: right;
+	margin-top: 15px;
+	margin-right: 9px;
+}
+.description {
+	text-align: justify;
+	word-wrap:break-word;
+}
+.buttons {
+	float: right;
+	margin: 5px;
+}
+.buttons a {
+	float: left;
+	text-decoration: none;
+	color: white;
+}
+.button-link {
+	margin: 5px;
+	padding: 1px 18px 1px 18px;
+	background-image: url("assets/btn1.png"), url("assets/btn2.png");
+	background-repeat: no-repeat, repeat-x;
+}

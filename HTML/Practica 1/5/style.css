@@ -1,0 +1,50 @@
+#wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+#content {
+	width: 70%;
+	margin: 0 auto;
+}
+#table-form {
+	border-collapse: collapse; 
+}
+#table-form #table-city {
+	margin: -7px;
+}
+#table-form #table-city td {
+	border-top: 0px;
+	border-bottom: 0px;
+	border-right: 0px;
+}
+#table-form #table-city #state {
+	width: 60px;
+}
+#table-form .label {
+	width: 200px;
+	text-align: right;
+	font-weight: bold;
+}
+#table-form .input-column {
+	min-width: 300px;
+}
+#table-form td {
+	border: 1px solid black;
+	padding: 5px;
+}
+#table-form #ccode, #table-form #areac {
+	width: 40px;
+}
+#table-form #number {
+	width: 70px;
+}
+#table-form #dmonth, #table-form #dday {
+	width: 35px;
+}
+#table-form #dyear {
+	width: 57px;
+}
+#table-form #submit-area {
+	background-color: #D1EDE1;
+	text-align: center;
+}

@@ -1,0 +1,6 @@
+Para pequeños retoques, como por ejemplo, la celda que contiene a la letra C, tiene una aleneación
+del texto a izquierda, cual es la mejor forma de hacero ?
+
+*Agregando style directamente en el html
+*Agregar ID a esa celda y formatear desde CSS.
+*Otra ?

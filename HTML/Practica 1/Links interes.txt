@@ -1,0 +1,4 @@
+http://www.w3.org/QA/2002/04/valid-dtd-list.html
+http://www.w3schools.com/tags/ref_html_dtd.asp
+http://www.w3schools.com/tags/tag_DOCTYPE.asp
+https://html5test.com/

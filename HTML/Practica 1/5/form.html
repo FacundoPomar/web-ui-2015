@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>A very very complex form</title>	
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<form id="big-form">
+				<table id="table-form">
+					<tr>
+						<td class="label">Last Name</td>
+						<td class="input-column">
+							<input type="text" name="lname" value="Nakov">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">First Name</td>
+						<td class="input-column">
+							<input type="text" name="fname" value="Svetlin">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Address</td>
+						<td class="input-column">
+							<textarea rows=4 cols=35 name="adress" >17 Hristo Boec Str. floor 3, apt. 12</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">City</td>
+						<td>
+							<table id="table-city">
+								<tr>
+									<td><input type="text" name="city" value="Kaspichan"></td>
+									<td><strong>State<strong></td>
+									<td><input type="text" name="state" id="state"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Zip/Postal Code</td>
+						<td>
+							<input type="text" name="zip" value="9325">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Country</td>
+						<td class="input-column">
+							<select name="country">
+								<option value="something">SomeThing</option>
+								<option value="Another Somthing">Another Somthing</option>
+								<option value="Bulgaria" selected>Bulgaria</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Phone(country code, area code, number)</td>
+						<td class="input-column">
+							(+<input type="number" name="ccode" id="ccode" value="359"> ) <input type="number" name="areac" id="areac" value="88"> - <input type="number" id="number" name="number" value="8334343">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">E-mail</td>
+						<td>
+							<input type="email" name="email" value="nakov@kaspichan.org">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Birth date</td>
+						<td>
+							Month <input type="number" name="dmonth" id="dmonth" value="06"> Day <input type="number" name="dday" id="dday" value="14"> Year(4 digit) <input type="number" name="dyear" id="dyear" value="1980">
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Gender</td>
+						<td>
+							<select name="gender">
+								<option value="male" selected>Male</option>
+								<option value="famale">Famale</option>
+								<option value="none">None</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Starting Date</td>
+						<td>
+							<input type="radio" name="dstart" value="spring2006" checked> Spring 2006 <input type="radio" name="dstart" value="summer2006"> Summer 2006
+						</td>
+					</tr>
+					<tr>
+						<td class="label">Comments/Questions</td>
+						<td>
+							<textarea rows=4 cols=35 name="comments">Please send me more information about the lodging</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" id="submit-area">
+						<input type="submit" value="Submit" name="submit">
+						<input type="button" value="Clear This Form">
+						</td>
+					</tr>
+				
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

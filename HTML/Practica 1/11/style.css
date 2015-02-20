@@ -1,0 +1,159 @@
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+.container {
+	background: #F1F1F1;
+	display: inline-block;
+}
+.left-sidebar {
+	width: 19%;
+	float: left;
+	background: #F1F1F1;
+}
+.right-sidebar {
+	width: 20%;
+	float: left;
+	background: #F1F1F1;
+	margin-left: 1%;
+}
+.main {
+	float: left;
+	width: 59%;
+	border: 1px solid black;
+	background: #fff;
+}
+.main-container {
+	width: 96%;
+	margin: 0 auto;
+}
+.navigator {
+	padding: 1% 0% 5.2% 0%;;
+}
+.navigator a {
+	text-decoration: none;
+}
+.navigator a:link,
+.navigator a:hover,
+.navigator a:visited {
+	color: black;
+}
+.navtop {
+	border-bottom: 2px solid #A0A0A0;
+}
+.navbottom {
+	border-bottom: 2px solid #A0A0A0;
+	border-top: 2px solid #A0A0A0;	
+	margin-top: 2%;
+}
+.button {
+	float: left;
+	width: 20%;
+	text-align: center;
+	border: 1px solid black;
+	margin-right: 1%;
+}
+.prev::before { 
+	content: "";
+	background: url("assets/arrows.png");
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 13px;
+	display: inline-block;
+	background-position: 0 0;
+	background-size: 27px;
+}
+.next::after {
+	content: "";
+	background: url("assets/arrows.png");
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 13px;
+	display: inline-block;
+	background-position: -13px 0px;
+	background-size: 27px;
+}
+.content {
+	clear: both;
+}
+.content a:link,
+.content a:visited,
+.widget-box a:link,
+.widget-box a:visited  {
+	color: #8E0805;
+}
+
+.entry {
+	margin-top: 1%;
+}
+.entry .title {
+	padding-left: 1%;
+}
+.entry .title,
+.widget-box .title {
+	background: #808080;
+	color: white;
+	font-weight: bold;
+}
+.widget-box {
+	text-align: center;	
+	border: 1px solid #9B9B9B;
+	margin: 1% 0% 1% 0%;
+}
+.widget-box a {
+	display: block;
+}
+.widget-box .inner {
+	margin: 3% 0% 3% 0%;
+}
+.widget-box img {
+	max-width: 100%;
+	height: auto;
+}
+.entry-content img {
+	float: left;
+}
+.footer {
+	clear: both;
+	width: 100%;
+}
+#home {
+	margin: 4% 0% 4% 2%;
+	font-weight: bold;
+}
+.widget {
+	margin: 2% 0% 2% 2%;
+}
+.widget .title {
+	text-align: left;
+	font-weight: bold;
+	font-size: 1em;
+	color: #8E0805;
+}
+.widget .list ul {
+	padding: 0;
+	margin-top: 0;
+}
+.widget .list li {
+	list-style: none;
+}
+.widget .list li a{
+	text-decoration: none;
+}
+.widget .list li a:link,
+.widget .list li a:active,
+.widget .list li a:visited,
+.widget .list li a:hover {
+	color: black;
+}
+#search-form {
+	width: 80%;
+	margin: 0% auto 3% auto;
+}
+#search-form #input-box {
+	width: 75%;
+}
+.center {
+	text-align: center;
+}

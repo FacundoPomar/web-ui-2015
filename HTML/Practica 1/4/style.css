@@ -1,0 +1,42 @@
+#wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+#content {
+	width:689px;
+	margin: 50px auto;
+}
+#table-fruit {
+	width: 439px;
+	float: left;
+}
+#table-fruit th {
+	font-size: 1.4em;
+}
+
+#table-box {
+	box-shadow: 1px 1px 1px grey;
+	border: 0.5px solid #F2F2F2;
+	font-size: 20px;
+	border-collapse: separate;
+	border-spacing: 5px;
+}
+#table-box td {
+	box-shadow: -1px -1px 1px black;
+	text-align: center;
+	min-width: 40px;
+	padding: 2px;
+}
+#table-box #c {
+	text-align: left;
+}
+#table-box #j, #table-box #b, #table-box #g, #table-box #n {
+	text-align: right;
+}
+#table-box #j {
+	vertical-align: bottom;
+}
+#contact-form {
+	width: 400px;
+	margin: 0 auto;
+}

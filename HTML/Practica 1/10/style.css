@@ -1,0 +1,68 @@
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+.header {
+	display: inline-block;
+	width: 100%;
+	background: rgb(59,59,59); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(59,59,59,1) 0%, rgba(110,119,116,1) 0%, rgba(110,119,116,1) 4%, rgba(10,14,10,1) 81%, rgba(10,14,10,1) 81%, rgba(10,14,10,1) 92%, rgba(10,8,9,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,59,59,1)), color-stop(0%,rgba(110,119,116,1)), color-stop(4%,rgba(110,119,116,1)), color-stop(81%,rgba(10,14,10,1)), color-stop(81%,rgba(10,14,10,1)), color-stop(92%,rgba(10,14,10,1)), color-stop(100%,rgba(10,8,9,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(59,59,59,1) 0%,rgba(110,119,116,1) 0%,rgba(110,119,116,1) 4%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 92%,rgba(10,8,9,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(59,59,59,1) 0%,rgba(110,119,116,1) 0%,rgba(110,119,116,1) 4%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 92%,rgba(10,8,9,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(59,59,59,1) 0%,rgba(110,119,116,1) 0%,rgba(110,119,116,1) 4%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 92%,rgba(10,8,9,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(59,59,59,1) 0%,rgba(110,119,116,1) 0%,rgba(110,119,116,1) 4%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 81%,rgba(10,14,10,1) 92%,rgba(10,8,9,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3b3b', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+
+}
+.container {
+	width: 100%;
+	background: #000;
+	display: inline-block;
+	background: #3B3B3B;
+}
+.content {
+	width: 95%;
+	margin: 0 auto;
+}
+.content h2 {
+	color: #FEE316;
+	font-size: 2em;
+	margin-top: 0px;
+	padding: 19px 0px 10px 0px;
+	
+}
+.content p {
+	color: grey;
+}
+.logo {
+	float: left;
+	margin: 11px 0px 0px 15px;
+}
+.logo img {
+	width: 100px;
+	height: 100px;
+}
+#login-msg {
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	margin-right: 15px;
+	font-size: 1.9em;
+}
+#login-form input {
+	margin-right: 17px;
+}
+#gobutton {
+	width: 65px;
+	height: 28px;
+	margin-bottom: -6px;
+}
+.login-head {
+	width: 700px;
+	float: right;
+	margin-top: 38px;
+}
+.shiny {
+	color: white;
+}
