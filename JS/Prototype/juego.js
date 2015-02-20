@@ -2,6 +2,7 @@ function Player () {
 	this.playerName = undefined;
 	this.life = 0;
 	this.pointHit = 0;
+	this.hitPossibility = 0;
 	this.die = undefined;
 	this.healPossibility = 0;
 	this.amountToHeal = 0;
@@ -12,6 +13,10 @@ function Player () {
 	
 	function isNumber (n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+
+	function calculatePossibility (possibility) {
+		return (Math.random()*100) >= (100 - possibility);
 	}
 
 	//
@@ -70,12 +75,23 @@ function Player () {
 
 	this.setHealPossibility = function (aNumber) {
 		/*
-			aNumber is a % from 0 to 100
-			*/
-			if (isNumber(aNumber)) {
-				this.healPossibility = aNumber;
-			}
+		aNumber is a % from 0 to 100
+		*/
+		if (isNumber(aNumber)) {
+			this.healPossibility = aNumber;
 		}
+	}
+
+	this.getHitPossibility = function () {
+		return this.hitPossibility;
+	}
+
+	this.setHitPossibility = function (aNumber) {
+		if (isNumber(aNumber)) {
+			this.hitPossibility = aNumber;
+		}
+	}
+
 
 	//
 	// BEGIN FUNCTIONAL METHODS
@@ -84,10 +100,11 @@ function Player () {
 	this.initialize = function (name) {
 		this.setName(name);
 		this.setLife(100);
-		this.setPointHit(10);
+		this.setPointHit(20);
 		this.setDie(false);
-		this.setHealPossibility(30);
-		this.setAmountToHeal(20);
+		this.setHealPossibility(20);
+		this.setAmountToHeal(10);
+		this.setHitPossibility(60);
 	}
 
 	this.reduceLife = function (anAmount) {
@@ -98,27 +115,34 @@ function Player () {
 				this.setLife(0);
 				this.setDie(true);
 				//alert(this.getName() + " Die in a horrible horrible way {put in here a random string}")
-				console.log(this.getName() + " Die in a horrible horrible way {put in here a random string}");
+				console.log(this.getName() + " Die in a horrible horrible way {put here a random string}");
 			}
 		} else {
-			//Do better
-			document.write(this.getName() + " already die<br />");
+			console.log(this.getName() + " is all ready dead. Do you want to kill him again ?")
 		}		
 	}
 
 
 	this.attack = function (op) {
-		op.reduceLife(this.getPointHit());
+		if (!op.isDie()) {
+
+			if (calculatePossibility(this.getHitPossibility())) {
+				op.reduceLife(this.getPointHit());
+			} else {
+				console.log("Oh no ! " + this.getName() + " don't hit the target.");
+			}
+		}
 	}
 
 	this.heal = function () {
-		var ran = Math.random()*100;
-		var pos = 100 - this.getHealPossibility()
-		if (ran >= (100 - this.getHealPossibility())) {
-			console.log("Hurrah ! You heal yourself, this is an enormous archievement !")
-			this.setLife(this.getLife() + this.getAmountToHeal());
-		} else {
-			console.log("you can't heal in this moment");
+		if (!this.isDie()) {
+			console.log(this.getName() + " will try heal himself");
+			if (calculatePossibility(this.getHealPossibility())) {
+				console.log("Hurrah ! You heal yourself, this is an enormous archievement !")
+				this.setLife(this.getLife() + this.getAmountToHeal());
+			} else {
+				console.log("you can't heal in this moment");
+			}
 		}
 	}
 
@@ -131,13 +155,26 @@ function Player () {
 }
 
 var op1 = new Player();
-op1.initialize("pepe")
+op1.initialize("pepe");
 var op2 = new Player();
 op2.initialize("hermindo");
 
-console.log("op1 attack op2");
-op1.attack(op2);
-console.log("op2 have now " + op2.getLife() + " of life");
-console.log("op2 will thrive heal it self");
-op2.heal();
+//Simulation...
 
+while (!op1.isDie() && !op2.isDie()) {
+	console.log("op1 attack op2");
+	op1.attack(op2);
+	if (!op2.isDie()) {
+		console.log("op2 have now " + op2.getLife() + " of life");
+		console.log("op2 attack op1");
+		op2.attack(op1);
+	}
+	console.log("op1 have now " + op1.getLife() + " of life");
+	op1.heal();
+	op2.heal();
+}
+if (op1.isDie()) {
+	console.log(op1.getName() + " win !")
+} else {
+	console.log(op2.getName() + " win !");
+}
