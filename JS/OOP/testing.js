@@ -69,4 +69,40 @@ console.log(land.getPropulsionUnits());
 land.accelerate();
 console.log(land.getSpeed());
 
+//Water test
+
+var a = WaterVehicle(10, [new Propeller(10, 1)]);
+console.log(a.getSpeed());
+a.accelerate();
+a.spinLeft();
+console.log(a.getSpeed());
+a.accelerate();
+
+
+
+//Amphibious test
+
+var a = Amphibious(0, 
+	[Wheel(10), Wheel(10), Wheel(10), Wheel(10)], 
+	[Propeller(10, 1), Propeller(3, 1)]);
+
+console.log("Amphibious speed "+ a.getSpeed());
+console.log("Land Speed: " + a.land.getSpeed());
+console.log("Water Speed: " + a.water.getSpeed());
+a.accelerate();
+console.log("Amphibious speed "+ a.getSpeed());
+console.log("Land Speed: " + a.land.getSpeed());
+console.log("Water Speed: " + a.water.getSpeed());
+a.switchToLand();
+console.log("Switch to Land");
+console.log("Amphibious speed "+ a.getSpeed());
+console.log("Land Speed: " + a.land.getSpeed());
+console.log("Water Speed: " + a.water.getSpeed());
+a.switchToWater();
+a.accelerate();
+console.log("Switch to water");
+console.log("Amphibious speed "+ a.getSpeed());
+console.log("Land Speed: " + a.land.getSpeed());
+console.log("Water Speed: " + a.water.getSpeed());
+
 */
