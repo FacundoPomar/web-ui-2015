@@ -6,6 +6,7 @@ function Player () {
 	this.die = undefined;
 	this.healPossibility = 0;
 	this.amountToHeal = 0;
+	this.waysToDie = ["way1", "way2", "way3", "way4", "way5", "way6", "way7", "way8", "way9", "way10"]
 
 	//
 	// BEGIN INTERNAL FUNCTIONS
@@ -92,6 +93,10 @@ function Player () {
 		}
 	}
 
+	this.getWaysToDie = function () {
+		return this.waysToDie;
+	}
+
 
 	//
 	// BEGIN FUNCTIONAL METHODS
@@ -115,7 +120,7 @@ function Player () {
 				this.setLife(0);
 				this.setDie(true);
 				//alert(this.getName() + " Die in a horrible horrible way {put in here a random string}")
-				console.log(this.getName() + " Die in a horrible horrible way {put here a random string}");
+				console.log(this.getName() + " Die in a horrible horrible way " + this.getWaysToDie().randomChoice());
 			}
 		} else {
 			console.log(this.getName() + " is all ready dead. Do you want to kill him again ?")
@@ -141,7 +146,7 @@ function Player () {
 				console.log("Hurrah ! You heal yourself, this is an enormous archievement !")
 				this.setLife(this.getLife() + this.getAmountToHeal());
 			} else {
-				console.log("you can't heal in this moment");
+				console.log(this.getName() + " can't heal in this moment");
 			}
 		}
 	}
@@ -152,6 +157,10 @@ function Player () {
 	
 	
 
+}
+
+Array.prototype.randomChoice = function () {
+	return this[Math.floor(Math.random()*this.length)]
 }
 
 var op1 = new Player();
