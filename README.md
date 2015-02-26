@@ -1,5 +1,3 @@
-# web-ui-2015
-
 ## Curso Web UI
 
-prueba
+OOP --> Class --> Ejercicio de prueba de herencia y estructura. No realiza verificaciones en tipos de datos utilizados.
