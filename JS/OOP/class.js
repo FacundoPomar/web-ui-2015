@@ -137,6 +137,7 @@ function Vehicle (aSpeed) {
 
 	return {
 		addPropulsionUnit: addPropulsionUnit,
+		propulsionUnitAt: propulsionUnitAt,
 		getSpeed: getSpeed,
 		setSpeed: setSpeed,
 		getPropulsionUnits: getPropulsionUnits,
@@ -160,4 +161,33 @@ function LandVehicle (aSpeed, wheelsArray) {
 	}
 
 	return that;
+}
+
+function AirVehicle (aSpeed, aPropellingNozzle) {
+	var that = Vehicle(aSpeed);
+	
+	that.addPropulsionUnit(aPropellingNozzle || PropellingNozzle(10));
+
+	function switchAfterBurner(aBool) {
+		if (that.propulsionUnitAt(0)) {
+			that.propulsionUnitAt(0).setAfterBurner(aBool);
+		}
+	}
+
+	that.afterBurnerOn = function () {
+		//Verify instanceof propulsionUnits.
+		switchAfterBurner(true);
+
+	}
+
+	that.afterBurnerOff = function () {
+		switchAfterBurner(false);
+	};
+
+	that.getAfterBurner = function () {
+		return that.propulsionUnitAt(0);
+	}
+
+	return that;
+
 }
