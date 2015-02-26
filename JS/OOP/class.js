@@ -79,6 +79,7 @@ function Propeller(numberFins, spinDir) {
 	}
 
 	function setSpinDirection (aValue) {
+		//Value must by a valud number -1 or 1...validate...
 		spinDirection = aValue;
 	}
 
@@ -166,7 +167,7 @@ function LandVehicle (aSpeed, wheelsArray) {
 function AirVehicle (aSpeed, aPropellingNozzle) {
 	var that = Vehicle(aSpeed);
 	
-	that.addPropulsionUnit(aPropellingNozzle || PropellingNozzle(10));
+	that.addPropulsionUnit(aPropellingNozzle || PropellingNozzle(10)); //Must verify aPropellingNozzle
 
 	function switchAfterBurner(aBool) {
 		if (that.propulsionUnitAt(0)) {
@@ -182,12 +183,48 @@ function AirVehicle (aSpeed, aPropellingNozzle) {
 
 	that.afterBurnerOff = function () {
 		switchAfterBurner(false);
-	};
+	}
 
 	that.getAfterBurner = function () {
 		return that.propulsionUnitAt(0);
 	}
 
 	return that;
-
 }
+
+function WaterVehicle (aSpeed, propellerArray) {
+	var that = Vehicle(aSpeed);
+
+	if (Array.isArray(propellerArray)) {
+		for (var i = 0; i < propellerArray.length; i++) {
+			that.addPropulsionUnit(propellerArray[i]);
+		}
+	}
+
+	function setSpinDirection (aValue) {
+		var prop = that.getPropulsionUnits();
+		
+		//Set the direction of speed
+		that.setSpeed(Math.abs(that.getSpeed())*aValue);
+
+		for (var i = 0; i < prop.length; i++) {
+			prop[i].setSpinDirection(aValue);
+		}
+	}
+
+	that.getPropellers = function () {
+		return that.getPropulsionUnits();
+	}
+
+	that.spinRight = function () {
+		setSpinDirection(1);
+	}
+
+	that.spinLeft = function () {
+		setSpinDirection(-1);
+	}
+
+	return that;
+}
+
+
