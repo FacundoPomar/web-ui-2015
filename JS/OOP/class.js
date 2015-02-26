@@ -227,4 +227,44 @@ function WaterVehicle (aSpeed, propellerArray) {
 	return that;
 }
 
+function Amphibious (aSpeed, wheelsArray, propellerArray) {
+	var water = WaterVehicle(aSpeed, propellerArray);
+	var land = LandVehicle(aSpeed, wheelsArray);
+	var mode = land; //Set default to land mode;
 
+	function getSpeed () {
+		return mode.getSpeed();
+	}
+
+	function accelerate () {
+		mode.accelerate();
+	}
+
+	function switchToLand () {
+		mode = land;
+		water.setSpeed(0);
+	}
+
+	function switchToWater () {
+		mode = water;
+		land.setSpeed(0);
+	}
+
+	function getMode () {
+		if (mode == land) {
+			return "LAND";
+		} else {
+			return "WATER";
+		}
+	}
+
+	return {
+		water: water,
+		land: land,
+		getSpeed: getSpeed,
+		accelerate: accelerate,
+		switchToLand: switchToLand,
+		switchToWater: switchToWater,
+		getMode: getMode
+	}
+}
