@@ -1,0 +1,441 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"switchTo",
+				"switchToWater()"
+			],
+			[
+				"switch",
+				"switchToWater()"
+			],
+			[
+				"water",
+				"WaterVehicle"
+			],
+			[
+				"setSp",
+				"setSpinDirection(aValue)"
+			],
+			[
+				"getPro",
+				"getPropulsionUnits()"
+			],
+			[
+				"Prope",
+				"Propeller(numberFins, spinDir)"
+			],
+			[
+				"propulsion",
+				"propulsionUnitAt	(?)"
+			],
+			[
+				"Pro",
+				"propulsionUnitAt"
+			],
+			[
+				"wheels",
+				"wheelsArray"
+			],
+			[
+				"propul",
+				"propulsionUnits	[]"
+			],
+			[
+				"get",
+				"getSpeed()"
+			],
+			[
+				"propulsi",
+				"propulsionUnitAt(aPosition)"
+			],
+			[
+				"ge",
+				"getSpinDirection()"
+			],
+			[
+				"getA",
+				"getAcceleration()"
+			],
+			[
+				"set",
+				"setAfterBurner(aValue)"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"of",
+				"offsetHeight"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"str",
+				"strList	(?)"
+			],
+			[
+				"to",
+				"toLowerCase"
+			],
+			[
+				"node",
+				"nodeName"
+			],
+			[
+				"elements",
+				"elements	(?)"
+			],
+			[
+				"toLo",
+				"toLowerCase()"
+			],
+			[
+				"toL",
+				"toLowerCase()"
+			],
+			[
+				"arr",
+				"arr	[]"
+			],
+			[
+				"s",
+				"slice(from, to?)"
+			],
+			[
+				"c",
+				"c	(num)"
+			],
+			[
+				"wi",
+				"whitout"
+			],
+			[
+				"font",
+				"font-variant"
+			],
+			[
+				"nav",
+				"nav-element"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"widget",
+				"widget-box"
+			],
+			[
+				"left",
+				"left"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"li",
+				"list"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: int",
+				"Package Control: Install Package"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Backbone/Pruebas/Estructura Basica/index.html",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Backbone/Pruebas/Estructura Basica/js/script.js",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Exercises-jquery-2015-02-19/Exercises-jquery/libs/script.js",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Backbone/Pruebas/Estructura Basica/js/script",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/JS/OOP/index.html",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/JS/OOP/class.js",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/JS/OOP/testing.js",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/README.md",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OOP/class.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OOP/testing.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OOP/index.html",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OPP/testing.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OPP/index.html",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/OPP/class.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Firsts Applications/2/script.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Firsts Applications/1/colors.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Prototype/index.html",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Prototype/juego.js",
+		"/C/Users/facundo.pomar/Desktop/prueba.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Strings/7.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Strings/9.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/JS/Strings/11.js",
+		"/C/Users/facundo.pomar/Desktop/Resumen FINAL ING1.odt",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Prototype/juego.js",
+		"/C/Users/facundo.pomar/Documents/practicas web-ui-2015/web-ui-2015/README.md",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Prototype/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/pruebas.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/Exercises-jquery-2015-02-19/Exercises-jquery/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/Exercises-jquery-2015-02-19/Exercises-jquery/css/style.css",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/Exercises-jquery-2015-02-19/Exercises-jquery/libs/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/Exercises-jquery-2015-02-19/Exercises-jquery/libs/jquery-1.5.0.js",
+		"/C/Users/facundo.pomar/AppData/Roaming/Sublime Text 2/Packages/Autoprefixer/Autoprefixer.sublime-settings",
+		"/C/Users/facundo.pomar/AppData/Roaming/Sublime Text 2/Packages/User/Autoprefixer.sublime-settings",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/5/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/5/style.css",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/5/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/7/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/7/style.css",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/7/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4 bis/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4 bis/style.css",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4 bis/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4/style.css",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/4/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/ejecutable.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/12.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/11.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/10.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/9.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/8.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/7.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/6.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Loops/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Loops/ejecutable.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/3/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/3/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/2/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/2/script.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/1/colors.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Firsts Applications/1/index.html",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/5.js",
+		"/C/Users/facundo.pomar/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/3.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Strings/1.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/6.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/7.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/5.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/3.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/1.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Functions/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/6.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/5.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/3.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Arrays/1.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Loops/3.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Loops/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Loops/1.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/5.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/7.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/6.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Statements if and switch/1.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Variables and expressions/5.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Variables and expressions/4.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Variables and expressions/3.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Variables and expressions/2.js",
+		"/C/Users/facundo.pomar/Desktop/Practicas WEB UI 2015/JS/Variables and expressions/1.js",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/12/style.css",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/12/index.html",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/11/index.html",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/11/style.css",
+		"/C/Users/facundo.pomar/Desktop/xhtml1-strict.dtd",
+		"/C/Users/facundo.pomar/Desktop/HTML/ejemplo tablas/index.html",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/10/index.html",
+		"/C/Users/facundo.pomar/Desktop/HTML/Practica 1/10/style.css",
+		"/C/Users/facundo.pomar/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"this.name",
+			"name",
+			"tr",
+			"none",
+			"hidden",
+			"mylist",
+			"nav",
+			"more",
+			"footer",
+			"profile",
+			"content",
+			"nav",
+			"logo",
+			"container",
+			"widget-box",
+			"form",
+			"entry",
+			"navbo",
+			"content",
+			"main",
+			"title"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"5"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
