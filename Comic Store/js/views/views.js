@@ -38,15 +38,19 @@ app.LoginView = Backbone.View.extend({
 	render: function () {
 		if (app.session) {
 			this.showName();
-			$(this.container).append('<div class="btn btn-sm btn-alert" id="btn-logout">Logout</div>');
+			this.showLogout();
 		} else {
-			$(this.container).append( this.loginTemplate( this.model.attributes));
+			this.showLogin();
 		}
 	},
 
 	logout: function () {
-		$("#user-name").fadeOut().remove();
-		$(this.$el.selector).fadeIn();
+		console.log("trigger");
+		app.session = undefined;
+		localStorage.removeItem("session");;
+		$("#btn-logout").fadeOut().delay(100).remove();
+		$("#user-name").fadeOut().delay(100).remove();
+		this.showLogin();
 	},
 
 	login: function () {
@@ -65,6 +69,7 @@ app.LoginView = Backbone.View.extend({
 					this.loginMsg("Login Like: " + user, "success", true, [$("username"), $("pass")]);
 					this.login();
 					this.showName();
+					this.showLogout();
 				} else {
 					this.loginMsg("UserName or Password incorrect", "danger");
 				}
@@ -102,7 +107,18 @@ app.LoginView = Backbone.View.extend({
 
 	showName: function () {
 		$("<small></small>").attr("id", "user-name").html("Hello " + app.session.name).hide().appendTo($(this.container)).fadeIn();
+	},
+
+	showLogout: function () {
+		$(this.container).append(' <div class="btn btn-sm btn-info" id="btn-logout">Logout</div>');
+	},
+
+	showLogin: function () {
+		$(this.container).append( this.loginTemplate( this.model.attributes));
 	}
 
 
 });
+
+
+
