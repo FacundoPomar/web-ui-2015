@@ -13,9 +13,19 @@ app.Comic = Backbone.Model.extend({
 
 app.User = Backbone.Model.extend({
 	defaults: {
+		urlRoot: "/user",
 		id: "",
 		username: "",
 		name: "",
-		pass: "",
+		pass: ""
+	}
+});
+
+app.Button = Backbone.Model.extend({
+
+	defaults: {
+		text: "aButton",
+		type: "btn-info",
+		size: "btn-sm"
 	}
 });

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Comic",
+				"ComicCollection〔variable〕"
+			],
+			[
 				"switchTo",
 				"switchToWater()"
 			],
@@ -155,19 +159,23 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 127.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
 			],
 			[
 				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"instal",
 				"Package Control: Install Package"
 			],
 			[
@@ -216,6 +224,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Comic Store/comics.json",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/index.html",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/json/comics.json",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/js/models/models.js",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/test.js",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/js/collections/collections.js",
+		"/C/Program Files (x86)/EasyPHP-DevServer-14.1VC11/data/localweb/Comic Store/comics.json",
+		"/C/Users/facundo.pomar/Documents/web-ui-2015/Comic Store/js/models/models.js",
 		"/C/Users/facundo.pomar/Documents/web-ui-2015/Backbone/Pruebas/Estructura Basica/index.html",
 		"/C/Users/facundo.pomar/Documents/web-ui-2015/Backbone/Pruebas/Estructura Basica/js/script.js",
 		"/C/Users/facundo.pomar/Documents/web-ui-2015/Exercises-jquery-2015-02-19/Exercises-jquery/libs/script.js",
@@ -329,6 +345,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"C:\\Users\\facundo.pomar\\Documents\\web-ui-2015\\Comic Store\\json"
 		]
 	},
 	"find_state":
@@ -386,7 +403,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 36.0
 	},
 	"layout":
 	{
@@ -433,9 +450,9 @@
 		"width": 0.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true
 }

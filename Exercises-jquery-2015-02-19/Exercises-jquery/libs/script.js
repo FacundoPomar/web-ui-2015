@@ -154,5 +154,3 @@ Put a copy of one of the existing images inside of it
  $("<div></div>").addClass("module").append( 
  	$("img").first().clone() 
  	).insertAfter($("div .module:last-of-type"));
-
-
