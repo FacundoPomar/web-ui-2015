@@ -178,6 +178,7 @@ app.LoginView = Backbone.View.extend({
 						$("#btn-logout").fadeIn();
 						$("#user-name").html( this.nameTemplate({name: app.session.name})).fadeIn();
 						$("#loginModal").modal("hide");
+						this.emptyForm();
 					} else {
 						this.loginMsg("UserName or Password incorrect", "danger");
 					}
@@ -188,10 +189,10 @@ app.LoginView = Backbone.View.extend({
 				this.loginMsg("User Empty", "danger");
 			}
 		}
-		this.emptyForm();
+		
 	},
 
-	loginMsg: function (msg, type, correct, inputs) {
+	loginMsg: function (msg, type) {
 		if ($("#alert-login").length) {
 			$("#alert-login").remove();
 		}
@@ -200,19 +201,8 @@ app.LoginView = Backbone.View.extend({
 		.html(msg)
 		.attr("id", "alert-login")
 		.hide()
-		.prependTo(
-			$("#login-modal-body"))
+		.prependTo($("#login-modal-body"))
 		.slideDown();
-		
-		if (correct) {
-			setTimeout(function () { 
-				_.map(inputs, function (elem) {
-					elem.val("");
-				});
-				$("#loginModal").modal("hide");
-				
-			}, 1000);
-		}
 	},
 
 	emptyForm: function () {
@@ -221,4 +211,3 @@ app.LoginView = Backbone.View.extend({
 		$("#pass").val("")
 	}
 });
-

@@ -1,26 +1,63 @@
 var app = app || {};
 
-var ComicCollection = Backbone.Collection.extend({
+app.ComicCollection = Backbone.Collection.extend({
 	model: app.Comic,
-	url: './json/comics.json'
+	url: './json/comics.json',
 
-    //localStorage: new Backbone.LocalStorage('comics-collection')
+	initialize: function () {
+		this.fetch();
+	}
+
 });
 
-var UserCollection = Backbone.Collection.extend({
+app.UserCollection = Backbone.Collection.extend({
 
 	model: app.User,
-	url: "./json/users.json"
+	url: "./json/users.json",
+	lasId: "",
+
+	initialize: function () {
+		this.lastId = 0;
+		this.fetch();
+		/*this.listenTo(this, "change", this.onChangeModel);
+		this.listenTo(this, "add", this.onAddModel);
+		this.listenTo(this, "remove", this.onRemoveModel);*/
+		app.localLoad("users", this, app.User);
+		this.save();
+		
+	},
+
+	/*onAddModel: function () {
+		app.localSave("users", this);
+	},
+
+	onChangeModel: function () {
+		app.localSave("users", this);
+	},
+
+	onRemoveModel: function () {
+		app.localSave("users", this);
+	}*/
+
+	save: function () {
+		app.localSave("users", this);
+	}
+
+
+
 
 });
 
-app.Users = new UserCollection();
-app.Comics = new ComicCollection();
-app.Comics.set('localStorage', new Backbone.LocalStorage('comics-collection'))
+//app.Users = new app.UserCollection({local: false});
+//app.Users.set('localStorage', new Backbone.LocalStorage('users-collection'))
+//app.Comics = new app.ComicCollection({local: false});
 
-app.Users.fetch();
+//app.Comics.set('localStorage', new Backbone.LocalStorage('comics-collection'))
 
-app.Comics.fetch();
+
+//app.Users.fetch();
+
+//app.Comics.fetch();
 
 
 
