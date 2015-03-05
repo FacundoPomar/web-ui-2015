@@ -20,7 +20,6 @@ app.session = JSON.parse(localStorage.getItem("session"));
 app.Users = new app.UserCollection();
 app.Comics = new app.ComicCollection();
 app.SlideComics = new app.SlideComicCollection();
-console.log(app.SlideComics);
 app.SlideComicsView = new app.SlideComicView();
 
 
