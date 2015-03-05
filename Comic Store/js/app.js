@@ -19,7 +19,8 @@ app.Comics = new app.ComicCollection();
 app.events = _.extend({}, Backbone.Events);
 app.session = JSON.parse(localStorage.getItem("session"));
 
-new app.LoginView({model: new app.Button({text: "login", type: "btn-info"})});
+app.loginView = new app.LoginView({model: new app.Button({text: "login", type: "btn-info"})});
+app.registerView = new app.RegisterView();
 
 
 var a = new app.Comic();
