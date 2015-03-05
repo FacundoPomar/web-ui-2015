@@ -213,17 +213,21 @@ app.RegisterView = Backbone.View.extend({
 
 app.SlideComicModelView = Backbone.View.extend({
 
-	tagName: "div",
+
 	slideClass: "slider",
 	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />'),
 
 	events: {
-		"click": "onClick" //Open comic at click
+		"click": "onClickk" //Open comic at click
 	},
 
 	render: function () {
-		this.$el.addClass(this.slideClass).html( this.template( this.model.attributes));
+		this.$el.html(this.template( this.model.attributes)).addClass(this.slideClass);
 		return this;
+	},
+
+	onClickk: function () {
+		console.log("He touch me !")
 	}
 });
 
@@ -253,7 +257,7 @@ app.SlideComicView = Backbone.View.extend({
 			infiniteLoop: true,
 			captions: true,
 			slideMargin: 10,
-			speed: 100,
+			speed: 1500,
 		});
 	},
 
