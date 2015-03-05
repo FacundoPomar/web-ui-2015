@@ -19,25 +19,10 @@ app.UserCollection = Backbone.Collection.extend({
 	initialize: function () {
 		this.lastId = 0;
 		this.fetch();
-		/*this.listenTo(this, "change", this.onChangeModel);
-		this.listenTo(this, "add", this.onAddModel);
-		this.listenTo(this, "remove", this.onRemoveModel);*/
 		app.localLoad("users", this, app.User);
 		this.save();
 		
 	},
-
-	/*onAddModel: function () {
-		app.localSave("users", this);
-	},
-
-	onChangeModel: function () {
-		app.localSave("users", this);
-	},
-
-	onRemoveModel: function () {
-		app.localSave("users", this);
-	}*/
 
 	save: function () {
 		app.localSave("users", this);
@@ -47,17 +32,6 @@ app.UserCollection = Backbone.Collection.extend({
 
 
 });
-
-//app.Users = new app.UserCollection({local: false});
-//app.Users.set('localStorage', new Backbone.LocalStorage('users-collection'))
-//app.Comics = new app.ComicCollection({local: false});
-
-//app.Comics.set('localStorage', new Backbone.LocalStorage('comics-collection'))
-
-
-//app.Users.fetch();
-
-//app.Comics.fetch();
 
 
 
