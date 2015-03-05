@@ -1,21 +1,18 @@
 var app = app || {};
 
 app.localSave = function (key, col) {
-	console.log("va a guardar", JSON.stringify(col.toJSON()));
 	localStorage.setItem(key, JSON.stringify(col.toJSON()));
 }
-app.localLoad = function (key, col, constructor) {
+app.localLoad = function (key, col) {
 	var data = localStorage.getItem(key);
 	if (data) {
-		//console.log(data)
 		data = JSON.parse(data);
 		//Use map function....
 		for (var i = 0; i < data.length; i++) {
-			col.add(new constructor(data[i]));
+			col.create(data[i]);
 		}
 	}
 }
-
 app.Users = new app.UserCollection();
 app.Comics = new app.ComicCollection();
 
