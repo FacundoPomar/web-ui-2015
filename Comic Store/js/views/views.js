@@ -213,9 +213,9 @@ app.RegisterView = Backbone.View.extend({
 
 app.SlideComicModelView = Backbone.View.extend({
 
-	tagName: "li",
-	slideClass: "als-item",
-	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />{{ name }}'),
+	tagName: "div",
+	slideClass: "slider",
+	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />'),
 
 	events: {
 		"click": "onClick" //Open comic at click
@@ -229,9 +229,7 @@ app.SlideComicModelView = Backbone.View.extend({
 
 app.SlideComicView = Backbone.View.extend({
 
-	el: $("#slide-box"),
-	container: "#slide",
-	itemContainer: "#slide-item-container",
+	el: $(".slide-box"),
 
 	initialize: function () {
 		this.listenTo(app.events, "comics:onPopulate", this.addAll);
@@ -239,7 +237,6 @@ app.SlideComicView = Backbone.View.extend({
 	},
 
 	render: function () {
-		this.$el.html( $(this.container).html())
 		if (app.SlideComics.length) {
 			this.addAll();
 		}
@@ -248,23 +245,25 @@ app.SlideComicView = Backbone.View.extend({
 	},
 
 	startSlide: function () {
-		$("#slide-container").als({
-			visible_items: 2,
-			scrolling_items: 1,
-			orientation: "horizontal",
-			circular: "yes",
-			autoscroll: "no",
-			start_from: 1
+		$('.slide-box').bxSlider({
+			slideWidth: 150,
+			minSlides: 1,
+			randomStart: true,
+			maxSlides: 4,
+			infiniteLoop: true,
+			captions: true,
+			slideMargin: 10,
+			speed: 100,
 		});
 	},
 
 	addOne: function( comic ) {
 		var view = new app.SlideComicModelView({ model: comic });
-		$(this.itemContainer).append( view.render().el );
+		this.$el.append( view.render().el );
 	},
 
 	addAll: function() {
-		this.$(this.itemContainer).html('');
+		this.$el.html('');
 		app.SlideComics.each(function (comic) {app.SlideComicsView.addOne(comic)});
 		this.startSlide();
 	}
