@@ -15,6 +15,7 @@
 
 	<div class="masthead">
 		<div id="login-box"></div>
+		<div id="register-box"></div>
 		<h3 class="text-muted" id="page-title">Project name </h3>
 		<nav>
 			<ul class="nav nav-justified">
@@ -80,6 +81,38 @@
 					<div class="form-group">
 						<label for="pass">Password:</label>
 						<input type="password" id="pass" class="form-control" name="pass">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success" id="login-enter">Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/modal" id="registerModalTemplate">
+	<!-- Modal -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Register into the site</h4>
+				</div>
+				<div class="modal-body" id="login-modal-body">
+					<div class="form-group">
+						<label for="username">UserName:</label>
+						<input type="text" id="reg-username" class="form-control" name="reg-username">
+					</div>
+					<div class="form-group">
+						<label for="reg-pass">Password:</label>
+						<input type="password" id="reg-pass" class="form-control" name="reg-pass">
+					</div>
+					<div class="form-group">
+						<label for="reg-repass">Password:</label>
+						<input type="password" id="reg-repass" class="form-control" name="reg-repass">
 					</div>
 				</div>
 				<div class="modal-footer">
