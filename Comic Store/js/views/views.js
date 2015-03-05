@@ -110,21 +110,29 @@ app.LoginView = Backbone.View.extend({
 	}
 });
 
+
 app.RegisterView = Backbone.View.extend({
 
 	el: $("#register-box"),
 
 	button: '<div class="btn btn-sm btn-success" id="btn-register" data-toggle="modal" data-target="#registerModal">Register</div>',
 
+	events: {
+		"click #register-enter": "register"
+	},
+
 	initialize: function () {
 		this.listenTo(app.events, "login:login", this.onLogin);
 		this.listenTo(app.events, "login:logout", this.onLogout);
+		this.render();
 	},
 
 	render: function () {
 		this.$el.append($(this.button).hide());
-		this.$el.append($("#registerModalTemplate").hmtml())
-		this.show();
+		this.$el.append($("#registerModalTemplate").html());
+		if (!app.session) {
+			this.show();
+		}
 	},
 
 	show: function () {
@@ -133,7 +141,7 @@ app.RegisterView = Backbone.View.extend({
 
 	hide: function () {
 		$("#btn-register").fadeOut();	
-	}
+	},
 
 	onLogin: function () {
 		this.hide();
@@ -141,6 +149,70 @@ app.RegisterView = Backbone.View.extend({
 
 	onLogout: function () {
 		this.show();
-	}
+	},
 
+	register: function (){
+		var data = {
+			user: $("#reg-username").val(),
+			name: $("#reg-name").val(),
+			pass: $("#reg-pass").val(),
+			repass: $("#reg-repass").val()
+			
+		}
+		if (this.validate(data)) {
+			app.Users.create({id: data.user, username: data.user, pass: data.pass, name: data.name});
+			app.Users.save();
+		}
+	},
+
+	validate: function (data) {
+		for (var prop in data) {
+			if (!data[prop]) {
+				this.errorMsg(prop + " field empty");
+				return false;
+			}
+		}
+		if (data.pass !== data.repass) {
+			this.errorMsg("passwords don't match")
+			return false;
+		}
+		var exist = app.Users.find(function(model) { return model.get('username') == data.user; });
+		if (exist) {
+			this.errorMsg("the user already exist - try again")
+			return false;
+		} else {
+			return true;
+		}
+
+	},
+
+	errorMsg: function (msg) {
+		if ($("#alert-reg").length) {
+			$("#alert-reg").remove();
+		}
+		$("<div></div>")
+		.addClass("alert alert-danger")
+		.html(msg)
+		.attr("id", "alert-reg")
+		.hide()
+		.prependTo($("#register-modal-body"))
+		.slideDown();
+	},
+
+});
+
+app.SlideComicModelView = Backbone.View.extend({
+
+	tagName: "li",
+	slideClass: "als-item",
+	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />{{ name }}'),
+
+	events: {
+		"click": "onClick"
+	},
+
+	render: function () {
+		this.$el.addClass(this.slideClass).html( this.template( this.model.attributes));
+		return this;
+	}
 });
