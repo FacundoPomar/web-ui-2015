@@ -13,11 +13,16 @@ app.localLoad = function (key, col) {
 		}
 	}
 }
-app.Users = new app.UserCollection();
-app.Comics = new app.ComicCollection();
 
 app.events = _.extend({}, Backbone.Events);
 app.session = JSON.parse(localStorage.getItem("session"));
+
+app.Users = new app.UserCollection();
+app.Comics = new app.ComicCollection();
+app.SlideComics = new app.SlideComicCollection();
+console.log(app.SlideComics);
+app.SlideComicsView = new app.SlideComicView();
+
 
 app.loginView = new app.LoginView({model: new app.Button({text: "login", type: "btn-info"})});
 app.registerView = new app.RegisterView();

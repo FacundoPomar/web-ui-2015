@@ -162,6 +162,8 @@ app.RegisterView = Backbone.View.extend({
 		if (this.validate(data)) {
 			app.Users.create({id: data.user, username: data.user, pass: data.pass, name: data.name});
 			app.Users.save();
+			this.clearForm();
+			$("#registerModal").modal("hide");
 		}
 	},
 
@@ -199,6 +201,14 @@ app.RegisterView = Backbone.View.extend({
 		.slideDown();
 	},
 
+	clearForm: function () {
+		$("#alert-reg").remove();
+		$("#reg-username").val(""),
+		$("#reg-name").val(""),
+		$("#reg-pass").val(""),
+		$("#reg-repass").val("")
+	}
+
 });
 
 app.SlideComicModelView = Backbone.View.extend({
@@ -208,11 +218,54 @@ app.SlideComicModelView = Backbone.View.extend({
 	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />{{ name }}'),
 
 	events: {
-		"click": "onClick"
+		"click": "onClick" //Open comic at click
 	},
 
 	render: function () {
 		this.$el.addClass(this.slideClass).html( this.template( this.model.attributes));
 		return this;
+	}
+});
+
+app.SlideComicView = Backbone.View.extend({
+
+	el: $("#slide-box"),
+	container: "#slide",
+	itemContainer: "#slide-item-container",
+
+	initialize: function () {
+		this.listenTo(app.events, "comics:onPopulate", this.addAll);
+		this.render();
+	},
+
+	render: function () {
+		this.$el.html( $(this.container).html())
+		if (app.SlideComics.length) {
+			this.addAll();
+		}
+		
+		return this;
+	},
+
+	startSlide: function () {
+		$("#slide-container").als({
+			visible_items: 2,
+			scrolling_items: 1,
+			orientation: "horizontal",
+			circular: "yes",
+			autoscroll: "no",
+			start_from: 1
+		});
+	},
+
+	addOne: function( comic ) {
+		var view = new app.SlideComicModelView({ model: comic });
+		$(this.itemContainer).append( view.render().el );
+	},
+
+	addAll: function() {
+		this.$(this.itemContainer).html('');
+		app.SlideComics.each(function (comic) {app.SlideComicsView.addOne(comic)});
+		this.startSlide();
 	}
 });

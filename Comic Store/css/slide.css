@@ -1,0 +1,67 @@
+/*************************************
+ * generic styling for ALS elements
+ ************************************/
+
+.als-container {
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	z-index: 0;
+}
+
+.als-viewport {
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+}
+
+.als-wrapper {
+	position: relative;
+	list-style: none;
+}
+
+.als-item {
+	position: relative;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+}
+
+.als-prev, .als-next {
+	position: absolute;
+	cursor: pointer;
+	clear: both;
+}
+
+#slide-container {
+	margin: 40px auto;
+}
+
+#slide-container .als-item {
+	margin: 0px 5px;
+	padding: 4px 0px;
+	min-height: 120px;
+	min-width: 100px;
+	text-align: center;
+}
+
+#slide-container .als-item img {
+	width: 64px;
+	height: 90px;
+	display: block;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+#slide-container .als-prev, #slide-container .als-next {
+	top: 40px;
+}
+
+#slide-container .als-prev {
+	left: 200px;
+}
+
+#slide-container .als-next {
+	right: 200px;
+}

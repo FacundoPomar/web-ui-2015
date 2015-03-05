@@ -51,6 +51,7 @@ app.SlideComicCollection = Backbone.Collection.extend({
 				this.add(comic);
 			}
 		}
+		app.events.trigger("comics:onPopulate");
 	}
 });
 
