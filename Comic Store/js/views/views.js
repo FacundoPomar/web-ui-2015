@@ -55,6 +55,7 @@ app.LoginView = Backbone.View.extend({
 			$("#btn-logout").hide();
 			$("#btn-login").fadeIn();
 			$("#user-name").fadeOut();
+			app.events.trigger("login:logout");
 		}
 	},
 
@@ -74,6 +75,8 @@ app.LoginView = Backbone.View.extend({
 						$("#user-name").html( this.nameTemplate({name: app.session.name})).fadeIn();
 						$("#loginModal").modal("hide");
 						this.emptyForm();
+						//Trigger login event for RevisterView
+						app.events.trigger("login:login");
 					} else {
 						this.loginMsg("UserName or Password incorrect", "danger");
 					}
@@ -105,4 +108,39 @@ app.LoginView = Backbone.View.extend({
 		$("#username").val("");
 		$("#pass").val("")
 	}
+});
+
+app.RegisterView = Backbone.View.extend({
+
+	el: $("#register-box"),
+
+	button: '<div class="btn btn-sm btn-success" id="btn-register" data-toggle="modal" data-target="#registerModal">Register</div>',
+
+	initialize: function () {
+		this.listenTo(app.events, "login:login", this.onLogin);
+		this.listenTo(app.events, "login:logout", this.onLogout);
+	},
+
+	render: function () {
+		this.$el.append($(this.button).hide());
+		this.$el.append($("#registerModalTemplate").hmtml())
+		this.show();
+	},
+
+	show: function () {
+		$("#btn-register").fadeIn();
+	},
+
+	hide: function () {
+		$("#btn-register").fadeOut();	
+	}
+
+	onLogin: function () {
+		this.hide();
+	},
+
+	onLogout: function () {
+		this.show();
+	}
+
 });
