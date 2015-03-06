@@ -14,26 +14,31 @@ app.localLoad = function (key, col) {
 	}
 }
 
+//Global Event handler
 app.events = _.extend({}, Backbone.Events);
+
+//Session Manager
 app.session = JSON.parse(localStorage.getItem("session"));
 
+//Collections
 app.Users = new app.UserCollection();
 app.Comics = new app.ComicCollection();
+app.SlideComics = new app.SlideComicCollection();
 
-console.log("cargue la pagina");
-
-
-app.loginView = new app.LoginView({model: new app.Button({text: "login", type: "btn-info"})});
-app.registerView = new app.RegisterView();
-
-app.SlideComics = new app.SlideComicCollection(); //PUt together in function like app.slideStart()
+//Views
 app.SlideComicsView = new app.SlideComicView();
-
+app.loginView = new app.LoginView({model: new app.Button({text: "Login", type: "btn-info"})});
+app.registerView = new app.RegisterView();
 app.newsView = new app.NewsView();
-app.gamesView = new app.GamesView();
 app.homeView = new app.HomeView();
+app.genresView = new app.GenresView();
+app.editionsView = new app.EditionsView();
+app.charactersView = new app.CharactersView();
+app.sidebarView = new app.SidebarView()
 
-
+//Routing
 app.router = new app.Router();
-
 Backbone.history.start({pushState: true, root: "/Comic%20Store/"})
+app.router.home();
+
+
