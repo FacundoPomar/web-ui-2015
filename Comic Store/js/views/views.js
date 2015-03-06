@@ -279,3 +279,33 @@ app.SlideComicView = Backbone.View.extend({
 		this.startSlide();
 	}
 });
+
+app.NewsView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html("Hola, soy una noticia");
+		return this;
+	}
+});
+
+app.GamesView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html("Hola, soy un juego");
+		return this;
+	}
+});
+
+app.HomeView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html("Hola, soy home");
+		return this;
+	}
+});
