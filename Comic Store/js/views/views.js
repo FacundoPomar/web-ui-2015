@@ -1,5 +1,15 @@
 var app = app || {};
 
+app.UserProfileView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function (id) {
+		this.$el.html("soy el usuario con id: " + id);
+		return this;
+	}
+});
+
 app.ComicView = Backbone.View.extend({
 
 	el: ".jumbotron h1",
@@ -285,17 +295,7 @@ app.NewsView = Backbone.View.extend({
 	el: $("#content"),
 
 	render: function () {
-		this.$el.html("Hola, soy una noticia");
-		return this;
-	}
-});
-
-app.GamesView = Backbone.View.extend({
-
-	el: $("#content"),
-
-	render: function () {
-		this.$el.html("Hola, soy un juego");
+		this.$el.html('<h2 class="page-header">News !</h2> <p>Content content</p>');
 		return this;
 	}
 });
@@ -307,5 +307,69 @@ app.HomeView = Backbone.View.extend({
 	render: function () {
 		this.$el.html("Hola, soy home");
 		return this;
+	}
+});
+
+app.GenresView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html('<h2 class="page-header">Genres !</h2> <p>Content content</p>');
+		return this;
+	}
+});
+
+app.EditionsView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html('<h2 class="page-header">Editions !</h2> <p>Content content</p>');
+		return this;
+	}
+});
+
+app.CharactersView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html('<h2 class="page-header">Characters !</h2> <p>Content content</p>');
+		return this;
+	}
+});
+
+app.SidebarView = Backbone.View.extend({
+
+	el: $("#sidebar"),
+	last: undefined,
+	initialize: function () {
+		this.render();
+	},
+
+	events: {
+		"click": "onClick",
+		/*"click #news": "news",
+		"click #characters": "characters",
+		"click #home": "home",
+		"click #genres": "genres",
+		"click #editions": "editions"*/
+	},
+
+	render: function () {
+		this.$el.html( $("#sidebar-template").html());
+		return this;
+	},
+
+	onClick: function (e) {
+		if (app.router[e.target.id]) {
+			if (this.last) {
+				$("#" + this.last).parent().removeClass("active")
+			}
+			this.last = e.target.id;
+			$("#"+ e.target.id).parent().addClass("active");
+			app.router[e.target.id]();
+		}
 	}
 });
