@@ -20,6 +20,8 @@ app.ComicView = Backbone.View.extend({
 
 app.LoginView = Backbone.View.extend({
 
+	//Global Container <div id="login-box"></div>
+
 	el: $("#login-box"),
 	//Use external templates ?
 	logoutBtnTemplate: Handlebars.compile('<div class="btn {{ size }} {{ type }}" id="btn-logout">Logout</div>'),
@@ -233,6 +235,8 @@ app.SlideComicModelView = Backbone.View.extend({
 
 app.SlideComicView = Backbone.View.extend({
 
+	//Global Container <div class="slide-box"></div>
+
 	el: $(".slide-box"),
 
 	initialize: function () {
@@ -251,13 +255,16 @@ app.SlideComicView = Backbone.View.extend({
 	startSlide: function () {
 		$('.slide-box').bxSlider({
 			slideWidth: 150,
-			minSlides: 1,
+			minSlides: 2,
+			maxSlides: 5,
 			randomStart: true,
-			maxSlides: 4,
 			infiniteLoop: true,
-			captions: true,
-			slideMargin: 10,
+			slideMargin: 20,
 			speed: 1500,
+			auto: true,
+			autoStart: true,
+			autoHover: true,
+			moveSlides: 2
 		});
 	},
 
