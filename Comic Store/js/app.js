@@ -19,14 +19,21 @@ app.session = JSON.parse(localStorage.getItem("session"));
 
 app.Users = new app.UserCollection();
 app.Comics = new app.ComicCollection();
-app.SlideComics = new app.SlideComicCollection();
-app.SlideComicsView = new app.SlideComicView();
+
+console.log("cargue la pagina");
 
 
 app.loginView = new app.LoginView({model: new app.Button({text: "login", type: "btn-info"})});
 app.registerView = new app.RegisterView();
 
+app.SlideComics = new app.SlideComicCollection(); //PUt together in function like app.slideStart()
+app.SlideComicsView = new app.SlideComicView();
 
-var a = new app.Comic();
-a.set("name", "El ataque de los simios");
-new app.ComicView({model: a});
+app.newsView = new app.NewsView();
+app.gamesView = new app.GamesView();
+app.homeView = new app.HomeView();
+
+
+app.router = new app.Router();
+
+Backbone.history.start({pushState: true, root: "/Comic%20Store/"})
