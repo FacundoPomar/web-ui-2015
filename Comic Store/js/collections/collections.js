@@ -38,7 +38,7 @@ app.UserCollection = Backbone.Collection.extend({
 app.SlideComicCollection = Backbone.Collection.extend({
 	
 	model: app.Comic,
-	cantSamples: 9,
+	cantSamples: 6,
 	
 	initialize: function () {
 		this.listenTo(app.events, "comics:onFetch", this.populate);
