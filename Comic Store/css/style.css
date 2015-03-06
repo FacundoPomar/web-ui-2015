@@ -5,3 +5,17 @@
 #user-name {
 	color: white;
 }
+body {
+	background: url("../assets/images/bg.png");
+}
+
+.navbar-brand img {
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+}
+
+@font-face {
+	font-family: 'lovelyFont';
+	src: url('../assets/fonts/main-font.TTF');  
+}
