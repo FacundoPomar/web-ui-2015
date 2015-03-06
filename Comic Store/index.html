@@ -4,66 +4,67 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/dashboard.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./js/lib/jquery.bxslider/jquery.bxslider.css">
 </head>
 <body>
-	
-</body>
-<div class="container">
 
-	
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+            <li><div id="login-box"></div></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
 
-	<div class="masthead">
-		<div id="login-box"></div>
-		<div id="register-box"></div>
-		<h3 class="text-muted" id="page-title">Project name </h3>
-		<nav>
-			<ul class="nav nav-justified">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Projects</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Downloads</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
 
-	<!-- Jumbotron -->
-	<div class="jumbotron">
-		<div class="slide-box"></div>
-		<h1>Marketing stuff!</h1>
-		<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-		<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-	</div>
+          <ul class="nav nav-sidebar">
+          	
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
 
-	<!-- Example row of columns -->
-	<div class="row">
-		<div class="col-lg-4">
-			<h2>Safari bug warning!</h2>
-			<p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-lg-4">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-		<div class="col-lg-4">
-			<h2>Heading</h2>
-			<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-			<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-		</div>
-	</div>
-
-	<!-- Site footer -->
-	<footer class="footer">
-		<p>&copy; Company 2014</p>
-	</footer>
-
-</div> <!-- /container -->
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+			
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           <div class="slide-box" ></div>
+        </div>
+      </div>
+    </div>
 
 <!-- Precompile templates later with handlebars -->
 <script type="text/modal" id="modal-template">
