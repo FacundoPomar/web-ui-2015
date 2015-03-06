@@ -4,14 +4,17 @@ app.Router = Backbone.Router.extend({
 	
 	routes: {
 		"": "home",
-		"(/)": "home",
+		"/": "home",
 		"home(/)": "home",
 		"news(/)": "news",
-		"games(/)": "games"
+		"genres(/)": "genres",
+		"editions(/)": "editions",
+		"characters(/)": "characters",
+		"user/:query": "profile"
 	},
 
 	home: function () {
-		this.navigate("/home/", {pushState: true});
+		this.navigate("./", {pushState: true});
 		app.homeView.render();
 	},
 
@@ -20,8 +23,24 @@ app.Router = Backbone.Router.extend({
 		app.newsView.render();
 	},
 
-	games: function () {
-		this.navigate("/games/", {pushState: true});
-		app.gamesView.render();
+	genres: function () {
+		this.navigate("/genres/", {pushState: true});
+		app.genresView.render();
+	},
+
+	editions: function () {
+		this.navigate("/editions/", {pushState: true});
+		app.editionsView.render();
+	},
+
+	characters: function () {
+		this.navigate("/characters/", {pushState: true});
+		app.charactersView.render();
+	},
+
+	profile: function (query) {
+		this.navigate("/user/" + query, {pushState: true});
+		app.userView = new app.UserProfileView();
+		app.userView.render(query);
 	}
 });
