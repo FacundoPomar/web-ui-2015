@@ -19,11 +19,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="./assets/images/pow.png" alt="POW icon"/>BestComic</a>
+				<a class="navbar-brand comic-style" href="#"><img src="./assets/images/pow.png" alt="POW icon"/>BestComic</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Profile</a></li>
+					<li><div id="admin-box"></div></li>
 					<li><div id="register-box"></div></li>
 					<li><div id="login-box"></div></li>
 				</ul>
@@ -41,11 +41,12 @@
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<div class="slide-box" ></div>
-				<div id="content">
-				</div>
+				<div id="content"></div>
+
+				
 				<hr>
 				<footer>
-					<div class="row">
+					<div class="row comic-style">
 						<div class="col-md-4">
 							<h2>Contact Us !</h2>
 							<a href="mailto:contact@bestcomic.com" title="Contact us!"><img src="./assets/images/social/email.png" alt="pow mail"></a>
@@ -141,22 +142,90 @@
 
 <script type="test/template" id="sidebar-template">
 	<li><a href="#" id="home">Home</a></li>
+	<li><a href="#" id="profile">Profile</a></li>
 	<li><a href="#" id="news">News</a></li>
 	<li><a href="#" id="genres">Genres</a></li>
 	<li><a href="#" id="editions">Editions</a></li>
 	<li><a href="#" id="characters">Characters</a></li>
+	<div id="sidebar-extra-options"></div>
 </script>
 
-<!--<script type="text/template" id="slide">
-	<div class="als-container" id="slide-container">
-  <span class="als-prev"><img src="./assets/images/slide/thin_left_arrow_333.png" alt="prev" title="previous" /></span>
-  <div class="als-viewport">
-    <ul class="als-wrapper" id="slide-item-container">
-    </ul>
-  </div>
-  <span class="als-next"><img src="./assets/images/slide/thin_right_arrow_333.png" alt="next" title="next" /></span>
-</div>
-</script> -->
+<script type="text/template" id="template-profile">
+	<h1> {{ username }} </h1>
+	<hr />
+	<div class="row show-grid comic-style">
+		<div class="row show-grid">
+			<!-- User data -->
+			<div class="col-md-8">
+				<div class="field">Name: {{ name }}</div>
+				<div class="field">Email: {{ email }}</div>
+			</div>
+			<div class="col-md-4">
+				<img class="field" src="..{{ img }}" alt="{{ username }} profile" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Borrowed Comics</h2>
+				<hr>
+			</div>
+			
+			<div id="borrow-container"></div>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="template-comic-grid">
+	<div class="col-md-3">
+		<div class="block-center">
+			<img src="..{{ img }}" alt="{{ name }}" />
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="comic-button-template">
+	<ul class="nav nav-sidebar">
+		<li>
+			<a href="#" class="btn btn-info btn-lg">
+		    	<span class="glyphicon glyphicon-tasks"></span> Borrow Games
+		  	</a>
+		</li>
+		<li>
+			<a href="#" class="btn btn-info btn-lg">
+		    	<span class="glyphicon glyphicon-tasks"></span> Borrow Videos
+		  	</a>
+		</li>
+		<li>
+			<a href="#" class="btn btn-info btn-lg">
+		    	<span class="glyphicon glyphicon-tasks"></span> Borrow Other
+		  	</a>
+		</li>
+	</ul>
+</script>
+
+<script type="text/template" id="home-template">
+<h2>Most Readed Comic in the Month</h2>
+<hr>
+<div id="most-readed" class="center-block"></div>
+<hr>
+<h2>Popular Comics</h2>
+<div id="popular-comics"></div>
+</script>
+
+<script type="text/template" id="comic-full-template">
+	<div class="row show-grid center-block">
+		<div class="col-lg-6">
+			<div class="row">
+				<img src=".{{ img }}" class="center-block" alt="{{ name }}">
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="field">Name: {{ name }}</div>
+			<div class="field"> Release: {{ release }}</div>
+			<div class="field">Description: {{ description }}</div>
+		</div>
+	</div>
+</script>
 
 <script type="text/javascript" src="./js/lib/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>

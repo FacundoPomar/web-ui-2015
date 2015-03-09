@@ -10,33 +10,15 @@ app.UserProfileView = Backbone.View.extend({
 	}
 });
 
-app.ComicView = Backbone.View.extend({
-
-	el: ".jumbotron h1",
-
-	oneTemplate: Handlebars.compile("{{ name }}"),
-
-	initialize: function () {
-		this.listenTo(this.model, "change", this.render)
-		this.render();
-	},
-
-	render: function () {
-		this.$el.html( this.oneTemplate( this.model.attributes));
-		return this;
-	}
-
-});
-
 app.LoginView = Backbone.View.extend({
 
 	//Global Container <div id="login-box"></div>
 
 	el: $("#login-box"),
 	//Use external templates ?
-	logoutBtnTemplate: Handlebars.compile('<div class="btn {{ size }} {{ type }}" id="btn-logout">Logout</div>'),
+	logoutBtnTemplate: Handlebars.compile('<div class="btn {{ size }} {{ type }} navbar-btn" id="btn-logout">Logout</div>'),
 	
-	loginBtnTemplate: Handlebars.compile('<div class="btn {{ size }} {{ type }}" id="btn-login" data-toggle="modal" data-target="#loginModal">{{ text }}</div>'),
+	loginBtnTemplate: Handlebars.compile('<div class="btn {{ size }} {{ type }} navbar-btn" id="btn-login" data-toggle="modal" data-target="#loginModal">{{ text }}</div>'),
 	
 	nameTemplate: Handlebars.compile('<small id="user-name">Hello {{ name }} !</small>'),
 
@@ -68,6 +50,7 @@ app.LoginView = Backbone.View.extend({
 			$("#btn-login").fadeIn();
 			$("#user-name").fadeOut();
 			app.events.trigger("login:logout");
+			app.router.home();
 		}
 	},
 
@@ -127,7 +110,7 @@ app.RegisterView = Backbone.View.extend({
 
 	el: $("#register-box"),
 
-	button: '<div class="btn btn-sm btn-success" id="btn-register" data-toggle="modal" data-target="#registerModal">Register</div>',
+	button: '<div class="btn btn-sm btn-success navbar-btn" id="btn-register" data-toggle="modal" data-target="#registerModal">Register</div>',
 
 	events: {
 		"click #register-enter": "register"
@@ -227,7 +210,7 @@ app.SlideComicModelView = Backbone.View.extend({
 
 
 	slideClass: "slider",
-	template: Handlebars.compile('<img src="{{ img }}" alt="{{ name }}" title="{{ name }}" />'),
+	template: Handlebars.compile('<img src=".{{ img }}" alt="{{ name }}" title="{{ name }}" />'),
 
 	events: {
 		"click": "onClickk" //Open comic at click
@@ -255,7 +238,7 @@ app.SlideComicView = Backbone.View.extend({
 	},
 
 	render: function () {
-		if (app.SlideComics.length) {
+		if (app.SampleComics.length) {
 			this.addAll();
 		}
 		
@@ -285,7 +268,7 @@ app.SlideComicView = Backbone.View.extend({
 
 	addAll: function() {
 		this.$el.html('');
-		app.SlideComics.each(function (comic) {app.SlideComicsView.addOne(comic)});
+		app.SampleComics.each(function (comic) {app.SlideComicsView.addOne(comic)});
 		this.startSlide();
 	}
 });
@@ -296,16 +279,6 @@ app.NewsView = Backbone.View.extend({
 
 	render: function () {
 		this.$el.html('<h2 class="page-header">News !</h2> <p>Content content</p>');
-		return this;
-	}
-});
-
-app.HomeView = Backbone.View.extend({
-
-	el: $("#content"),
-
-	render: function () {
-		this.$el.html("Hola, soy home");
 		return this;
 	}
 });
@@ -337,13 +310,19 @@ app.CharactersView = Backbone.View.extend({
 	render: function () {
 		this.$el.html('<h2 class="page-header">Characters !</h2> <p>Content content</p>');
 		return this;
+	},
+
+	events: {
+		"click #character-uno": "onClick",
 	}
 });
 
 app.SidebarView = Backbone.View.extend({
 
 	el: $("#sidebar"),
+
 	last: undefined,
+
 	initialize: function () {
 		this.render();
 	},
@@ -371,5 +350,203 @@ app.SidebarView = Backbone.View.extend({
 			$("#"+ e.target.id).parent().addClass("active");
 			app.router[e.target.id]();
 		}
+	}
+});
+
+app.SidebarEspacialButtonsView = Backbone.View.extend({
+
+	el: $("#sidebar-extra-options"),
+
+	template: Handlebars.compile( $("#comic-button-template").html()),
+
+	initialize: function () {
+		this.listenTo(app.events, "comic:selected", this.render);
+	},
+
+	events: {
+		"click": "onClick",
+	},
+
+	render: function (obj) {
+		this.$el.html( this.template(obj.model.attributes));
+		return this;
+	},
+
+	onClick: function () {
+		console.log("hice click en los botones del comic");
+	},
+
+	clear: function () {
+		this.$el.html("");
+	}
+});
+
+
+app.ComicGridView = Backbone.View.extend({
+
+	selected: undefined,
+	oneTemplate: Handlebars.compile( $("#template-comic-grid").html()),
+
+	initialize: function () {
+		this.listenTo(this.model, "change", this.render)
+		this.render();
+	},
+
+	render: function () {
+		this.$el.html( this.oneTemplate( this.model.attributes));
+		return this;
+	},
+
+	events: {
+		"click" : "onClick",
+	},
+
+	onClick: function () {
+		// Effects
+		if (this.selected) {
+
+		} else {
+
+		}
+		app.events.trigger("comic:selected", {model: this.model});
+	}
+
+});
+
+app.ProfileView = Backbone.View.extend({
+
+	el: $("#content"),
+	model: app.User,
+	template: Handlebars.compile( $("#template-profile").html()),
+
+	initialize: function () {
+		this.listenTo(app.events, "comics:onPopulate", this.addAllBorrow);
+	},
+
+	render: function () {
+		this.$el.html( this.template( this.model.attributes));
+		if (app.SampleBorrowComics.length) {
+			this.addAllBorrow();
+		}
+		//this.$el.find("#borrow-container").append();
+		return this;
+	},
+
+	addAllBorrow: function () {
+		//Ugly bug with one comic empty in the coleccion
+		app.SampleBorrowComics.remove("");
+		this.$el.find("#borrow-container").html("");
+		app.SampleBorrowComics.each(function (comic) { 
+			app.profileView.addOneBorrow(comic);
+		});
+	},
+
+	addOneBorrow: function (comic) {
+		var view = new app.ComicGridView({ model: comic });
+		this.$el.find("#borrow-container").append( view.render().el );
+	}
+});
+
+app.AdminButtonView = Backbone.View.extend({
+
+	el: $("#admin-box"),
+
+	template: '<div id="control-panel-btn" class="btn btn-sm btn-success navbar-btn">Panel Control</div>',
+
+	initialize: function () {
+		this.listenTo(app.events, "login:login", this.show);
+		this.listenTo(app.events, "login:logout", this.hide);
+		this.listenTo(app.events, "users:onFetch", this.show);
+		this.render();
+		this.show();
+	},
+
+	render: function () {
+		this.$el.html( $(this.template).hide());
+	},
+
+	events: {
+		"click": "onClick",
+	},
+
+	verify: function () {
+		if (app.session) {
+			if (app.usersReady) {
+				var us = app.Users.get(app.session.id);
+				if (us) {
+					if (us.get("rol") == "admin") {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	},
+
+	show: function () {
+		if (this.verify()) {
+			$("#control-panel-btn").show();
+		}
+	},
+
+	hide: function () {
+		$("#control-panel-btn").hide();
+	},
+
+	onClick: function () {
+		if (this.verify()) {
+			app.router.admin();
+		}
+	}
+});
+
+app.AdminView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	render: function () {
+		this.$el.html("<h1> Admin Panel</h1> <p> OPtions Options Options</p>");
+	}
+});
+
+app.HomeView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	template: $("#home-template").html(),
+
+	initialize: function () {
+		this.listenTo(app.events, "comics:onPopulate", this.mostReaded);
+	},
+
+	render: function () {
+		this.$el.html( this.template);
+
+		if (app.SampleComics.length) {
+			this.mostReaded();
+		}
+		//this.latets();
+		return this;
+	},
+
+	mostReaded: function () {
+		new app.FullComicView({model: app.SampleComics.sample()});
+		//
+	},
+});
+
+app.FullComicView = Backbone.View.extend({
+
+	el: $("#most-readed"),
+
+	template: Handlebars.compile( $("#comic-full-template").html()),
+
+	initialize: function () {
+		this.render();
+	},
+
+	render: function () {
+		$(this.$el.selector).html (this.template(this.model.attributes))
+		return this;
 	}
 });

@@ -24,6 +24,8 @@ app.UserCollection = Backbone.Collection.extend({
 			success: function () {
 				app.localLoad("users", app.Users);
 				app.Users.save();
+				app.usersReady = true;
+				app.events.trigger("users:onFetch");
 			}
 
 		});
@@ -35,7 +37,7 @@ app.UserCollection = Backbone.Collection.extend({
 
 });
 
-app.SlideComicCollection = Backbone.Collection.extend({
+app.SampleComicCollection = Backbone.Collection.extend({
 	
 	model: app.Comic,
 	cantSamples: 8,

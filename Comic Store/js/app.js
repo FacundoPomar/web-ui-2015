@@ -14,6 +14,14 @@ app.localLoad = function (key, col) {
 	}
 }
 
+app.killZombieView = function (view) {
+	if (app.lastContentView) {
+		console.log("la cierro");
+		app.lastContentView.close();
+	}
+	app.lastContentView = view;
+}
+
 //Global Event handler
 app.events = _.extend({}, Backbone.Events);
 
@@ -23,7 +31,8 @@ app.session = JSON.parse(localStorage.getItem("session"));
 //Collections
 app.Users = new app.UserCollection();
 app.Comics = new app.ComicCollection();
-app.SlideComics = new app.SlideComicCollection();
+app.SampleComics = new app.SampleComicCollection();
+app.SampleBorrowComics = app.SampleComics;
 
 //Views
 app.SlideComicsView = new app.SlideComicView();
@@ -34,11 +43,15 @@ app.homeView = new app.HomeView();
 app.genresView = new app.GenresView();
 app.editionsView = new app.EditionsView();
 app.charactersView = new app.CharactersView();
+app.adminView = new app.AdminView();
 app.sidebarView = new app.SidebarView()
+app.sidebarComicOptions = new app.SidebarEspacialButtonsView({el: $("#sidebar-extra-options")});
+new app.AdminButtonView();
 
 //Routing
 app.router = new app.Router();
-Backbone.history.start({pushState: true, root: "/Comic%20Store/"})
+
+Backbone.history.start({pushState: true, root: "/Comic%20Store/"});
 app.router.home();
 
 
