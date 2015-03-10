@@ -76,5 +76,14 @@ app.Router = Backbone.Router.extend({
 			}
 			app.adminView.render();
 		}
+	},
+
+	search: function () {
+		app.sidebarComicOptions.clear();
+		this.navigate("/search/", {pushState: true});
+		if (!app.searchView) {
+			app.searchView = new app.SearchView();
+		}
+		app.searchView.render();
 	}
 });
