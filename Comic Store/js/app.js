@@ -14,14 +14,6 @@ app.localLoad = function (key, col) {
 	}
 }
 
-app.killZombieView = function (view) {
-	if (app.lastContentView) {
-		console.log("la cierro");
-		app.lastContentView.close();
-	}
-	app.lastContentView = view;
-}
-
 //Global Event handler
 app.events = _.extend({}, Backbone.Events);
 
