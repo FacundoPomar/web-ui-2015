@@ -420,7 +420,6 @@ app.ComicGridView = Backbone.View.extend({
 
 	onClick: function () {
 		// Effects
-		console.log("animo");
 		this.$el.animate({
 			opacity: '0.4'
 		}).animate({
@@ -461,7 +460,6 @@ app.GenericComicGridView = Backbone.View.extend({
 	}, 
 
 	addOne: function (comic) {
-		//console.log(this.imageDots);
 		var view = new app.ComicGridView({ model: comic, dots: this.imageDots});
 		$(this.$el.selector).append( view.render().el ); // No funciona el wrapper de el
 	}
