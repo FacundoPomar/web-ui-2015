@@ -155,7 +155,7 @@ app.RegisterView = Backbone.View.extend({
 			
 		}
 		if (this.validate(data)) {
-			app.Users.create({id: data.user, username: data.user, pass: data.pass, name: data.name});
+			app.Users.create({id: data.user, username: data.user, pass: data.pass, name: data.name, rol: "user", img: "/assets/images/profiles/default.png"});
 			app.Users.save();
 			this.clearForm();
 			$("#registerModal").modal("hide");
