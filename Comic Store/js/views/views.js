@@ -384,6 +384,7 @@ app.SidebarEspacialButtonsView = Backbone.View.extend({
 
 	render: function (obj) {
 		this.$el.html( this.template(obj.model.attributes));
+		this.$el.slideDown();
 		return this;
 	},
 
@@ -392,7 +393,7 @@ app.SidebarEspacialButtonsView = Backbone.View.extend({
 	},
 
 	clear: function () {
-		this.$el.html("");
+		this.$el.slideUp();
 	}
 });
 
