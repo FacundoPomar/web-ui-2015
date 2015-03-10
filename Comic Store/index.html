@@ -176,12 +176,19 @@
 	</div>
 </script>
 
-<script type="text/template" id="template-comic-grid">
+<script type="text/template" id="template-comic-grid-element">
 	<div class="col-md-3">
 		<div class="block-center">
-			<img src="..{{ img }}" alt="{{ name }}" />
+			<img src="{{ dots }}{{ img }}" alt="{{ name }}" />
 		</div>
 	</div>
+</script>
+
+<script type="text/template" id="template-comic-grid">
+<div class="row show-grid" id="grid-container">
+
+</div>
+<hr>
 </script>
 
 <script type="text/template" id="comic-button-template">
@@ -208,9 +215,13 @@
 <h2>Most Readed Comic in the Month</h2>
 <hr>
 <div id="most-readed" class="center-block"></div>
-<hr>
-<h2>Popular Comics</h2>
-<div id="popular-comics"></div>
+<div class="col-md-12">
+	<h2>Popular Comics</h2>
+	<hr>
+</div>
+<div class="row show-grid">
+	<div id="popular-comics"></div>
+</div>
 </script>
 
 <script type="text/template" id="comic-full-template">
