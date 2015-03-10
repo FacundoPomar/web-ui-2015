@@ -49,6 +49,7 @@ app.LoginView = Backbone.View.extend({
 			$("#btn-logout").hide();
 			$("#btn-login").fadeIn();
 			$("#user-name").fadeOut();
+			
 			app.events.trigger("login:logout");
 			app.router.home();
 		}
@@ -69,6 +70,7 @@ app.LoginView = Backbone.View.extend({
 						$("#btn-logout").fadeIn();
 						$("#user-name").html( this.nameTemplate({name: app.session.name})).fadeIn();
 						$("#loginModal").modal("hide");
+
 						this.emptyForm();
 						//Trigger login event for RevisterView
 						app.events.trigger("login:login");
@@ -324,7 +326,12 @@ app.SidebarView = Backbone.View.extend({
 	last: undefined,
 
 	initialize: function () {
+		this.listenTo(app.events, "login:login", this.login);
+		this.listenTo(app.events, "login:logout", this.logout);
 		this.render();
+		if (!app.session) {
+			$("#profile").hide(); //SIdebar Profile Button
+		}
 	},
 
 	events: {
@@ -339,6 +346,14 @@ app.SidebarView = Backbone.View.extend({
 	render: function () {
 		this.$el.html( $("#sidebar-template").html());
 		return this;
+	},
+
+	login: function () {
+		$("#profile").slideDown(); //SIdebar Profile Button
+	},
+
+	logout: function () {
+		$("#profile").slideUp(); //SIdebar Profile Button
 	},
 
 	onClick: function (e) {
