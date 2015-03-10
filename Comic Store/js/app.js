@@ -46,6 +46,7 @@ app.charactersView = new app.CharactersView();
 app.adminView = new app.AdminView();
 app.sidebarView = new app.SidebarView()
 app.searchView = new app.SearchView()
+app.genericComicsGridView = new app.GenericComicGridView({el: $("#popular-comics"), models: app.SampleComics, imageDots: "."});
 app.sidebarComicOptions = new app.SidebarEspacialButtonsView({el: $("#sidebar-extra-options")});
 new app.AdminButtonView();
 
