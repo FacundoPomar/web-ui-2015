@@ -382,18 +382,20 @@ app.SidebarEspacialButtonsView = Backbone.View.extend({
 });
 
 
-app.ComicGridView = Backbone.View.extend({
+app.ComicGridView = Backbone.View.extend({ 
 
 	selected: undefined,
-	oneTemplate: Handlebars.compile( $("#template-comic-grid").html()),
+	template: Handlebars.compile( $("#template-comic-grid-element").html()),
 
-	initialize: function () {
-		this.listenTo(this.model, "change", this.render)
+	initialize: function (options) {
+		this.models = options.model;
+		this.dots = options.dots;
+		this.listenTo(this.model, "change", this.render);
 		this.render();
 	},
 
 	render: function () {
-		this.$el.html( this.oneTemplate( this.model.attributes));
+		this.$el.html( this.template( $.extend(this.model.attributes, {dots: this.dots})));
 		return this;
 	},
 
@@ -403,14 +405,45 @@ app.ComicGridView = Backbone.View.extend({
 
 	onClick: function () {
 		// Effects
-		if (this.selected) {
-
-		} else {
-
-		}
 		app.events.trigger("comic:selected", {model: this.model});
 	}
 
+});
+
+app.GenericComicGridView = Backbone.View.extend({
+
+	template: Handlebars.compile( $("#template-comic-grid").html()),
+	imageDots: undefined,
+	models: {models: undefined},
+
+	initialize: function (options) {
+		this.el = options.el;
+		this.imageDots = options.imageDots;
+		this.models = {models: options.models};
+		this.listenTo(app.events, "comics:onPopulate", this.addAll);
+		this.render();
+	},
+
+	render: function () {
+		this.addAll(this.models);
+		return this;
+	},
+
+	addAll: function (obj) {
+		this.models = obj;
+		if (this.models.models.length) {
+			var instance = this;
+			instance.models.models.each(function (comic) { 
+				instance.addOne(comic);
+			});
+		}
+	}, 
+
+	addOne: function (comic) {
+		//console.log(this.imageDots);
+		var view = new app.ComicGridView({ model: comic, dots: this.imageDots});
+		$(this.$el.selector).append( view.render().el ); // No funciona el wrapper de el
+	}
 });
 
 app.ProfileView = Backbone.View.extend({
@@ -442,7 +475,7 @@ app.ProfileView = Backbone.View.extend({
 	},
 
 	addOneBorrow: function (comic) {
-		var view = new app.ComicGridView({ model: comic });
+		var view = new app.ComicGridView({ model: comic, dots: ".."});
 		this.$el.find("#borrow-container").append( view.render().el );
 	}
 });
@@ -521,7 +554,6 @@ app.HomeView = Backbone.View.extend({
 
 	render: function () {
 		this.$el.html( this.template);
-
 		if (app.SampleComics.length) {
 			this.mostReaded();
 		}
@@ -531,7 +563,6 @@ app.HomeView = Backbone.View.extend({
 
 	mostReaded: function () {
 		new app.FullComicView({model: app.SampleComics.sample()});
-		//
 	},
 });
 

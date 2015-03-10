@@ -20,7 +20,7 @@ app.Router = Backbone.Router.extend({
 			app.homeView = new app.HomeView();
 		}
 		app.homeView.render();
-		console.log("home");
+		app.genericComicsGridView.render();
 	},
 
 	news: function () {
