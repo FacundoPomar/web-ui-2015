@@ -550,3 +550,15 @@ app.FullComicView = Backbone.View.extend({
 		return this;
 	}
 });
+
+app.SearchView = Backbone.View.extend({
+
+	el: $("#content"),
+
+	template: Handlebars.compile( $("#search-template").html()),
+
+	render: function () {
+		this.$el.html( this.template({title: "Search for Comics"}));
+		return this;
+	}
+});
