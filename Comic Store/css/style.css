@@ -21,12 +21,8 @@ body {
 	src: url('../assets/fonts/main-font.TTF');  
 }
 
-#internal-sidebar {
-	background-color: #DF2E16;
-	border-right: 1px solid #eee;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+#sidebar .glyphicon-flash {
+	color: red;
 }
 
 #content .field {
