@@ -425,8 +425,10 @@ app.ComicGridView = Backbone.View.extend({
 			opacity: '0.4'
 		}).animate({
 			opacity: '1'
-		});	
-		app.events.trigger("comic:selected", {model: this.model});
+		});
+		if (app.session) {
+			app.events.trigger("comic:selected", {model: this.model});
+		}
 	}
 
 });
