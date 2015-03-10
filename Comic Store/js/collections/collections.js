@@ -53,7 +53,7 @@ app.SampleComicCollection = Backbone.Collection.extend({
 				this.add(comic);
 			}
 		}
-		app.events.trigger("comics:onPopulate");
+		app.events.trigger("comics:onPopulate", {models: this});
 	}
 });
 
