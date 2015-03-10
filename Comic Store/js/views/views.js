@@ -420,6 +420,12 @@ app.ComicGridView = Backbone.View.extend({
 
 	onClick: function () {
 		// Effects
+		console.log("animo");
+		this.$el.animate({
+			opacity: '0.4'
+		}).animate({
+			opacity: '1'
+		});	
 		app.events.trigger("comic:selected", {model: this.model});
 	}
 
